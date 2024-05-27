@@ -14,12 +14,12 @@ import { Group } from './group/entities/group.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      username: 'user',
-      password: 'Pass@1234',
+      username: 'root',
+      password: '',
       database: 'nest6_homework',
       host: 'localhost',
       port: 3306,
-      entities: [Teacher, Group],
+      entities: [Teacher, Group, Student],
       synchronize: true
     }),
     TeacherModule, StudentModule, GroupModule,

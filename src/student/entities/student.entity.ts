@@ -21,8 +21,8 @@ export class Student {
     @Column()
     password: string;
 
-    @Column("int", { array: true })
-    rating: number[];
+    @Column()
+    rating: number;
 
     @ManyToOne(() => Group, group => group.students)
     group: Group;
