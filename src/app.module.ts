@@ -8,6 +8,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Teacher } from './teacher/entities/teacher.entity';
 import { Student } from './student/entities/student.entity';
 import { Group } from './group/entities/group.entity';
+import { RaitingModule } from './raiting/raiting.module';
+import { Raiting } from './raiting/entities/raiting.entity';
 
 
 @Module({
@@ -16,13 +18,13 @@ import { Group } from './group/entities/group.entity';
       type: 'mysql',
       username: 'root',
       password: '',
-      database: 'nest6_homework',
+      database: 'nest6',
       host: 'localhost',
       port: 3306,
-      entities: [Teacher, Group, Student],
+      entities: [Teacher, Group, Student,Raiting],
       synchronize: true
     }),
-    TeacherModule, StudentModule, GroupModule,
+    TeacherModule, StudentModule, GroupModule, RaitingModule,
   ],
   controllers: [AppController],
   providers: [AppService],

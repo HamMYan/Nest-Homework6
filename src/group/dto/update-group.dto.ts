@@ -6,6 +6,4 @@ export class UpdateGroupDto {
     name: string    
     @ApiProperty()
     count: number
-    @ApiProperty()
-    teacherId: number
 }

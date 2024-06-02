@@ -1,5 +1,6 @@
 import { Group } from "src/group/entities/group.entity";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Raiting } from "src/raiting/entities/raiting.entity";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Student {
@@ -21,9 +22,9 @@ export class Student {
     @Column()
     password: string;
 
-    @Column()
-    rating: number;
-
     @ManyToOne(() => Group, group => group.students)
     group: Group;
+
+    @ManyToOne(() => Raiting, raiting => raiting.student)
+    ratings: Raiting[];
 }

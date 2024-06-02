@@ -1,10 +1,13 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { Teacher } from "src/teacher/entities/teacher.entity";
 
 export class CreateGroupDto {
     @ApiProperty()
-    name: string    
+    name: string;
+
     @ApiProperty()
-    count: number
+    count: number;
+
     @ApiProperty()
-    teacherId: number
+    teacherId: number; 
 }
