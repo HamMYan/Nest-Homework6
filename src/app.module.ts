@@ -11,7 +11,6 @@ import { Group } from './group/entities/group.entity';
 import { RaitingModule } from './raiting/raiting.module';
 import { Raiting } from './raiting/entities/raiting.entity';
 
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -21,12 +20,15 @@ import { Raiting } from './raiting/entities/raiting.entity';
       database: 'nest6',
       host: 'localhost',
       port: 3306,
-      entities: [Teacher, Group, Student,Raiting],
-      synchronize: true
+      entities: [Teacher, Group, Student, Raiting],
+      synchronize: true,
     }),
-    TeacherModule, StudentModule, GroupModule, RaitingModule,
+    TeacherModule,
+    StudentModule,
+    GroupModule,
+    RaitingModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

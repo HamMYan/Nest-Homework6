@@ -20,7 +20,12 @@ export class TeacherService {
   }
 
   async findOne(id: number) {
-    return await this.teacherRepository.findOneBy({id})
+    return await this.teacherRepository.findOne({
+      where: { id },
+      relations: {
+        group: true,
+      },
+    });
   }
 
   async update(id: number, updateTeacherDto: UpdateTeacherDto) {

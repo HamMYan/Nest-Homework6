@@ -16,6 +16,6 @@ export class Group {
     @ManyToOne(type => Teacher, teacher => teacher.group)
     teacher: Teacher;
 
-    @ManyToOne((type) => Student, student => student.group)
-    students: number[]
+    @OneToMany((type) => Student, student => student.group)
+    students: Student[]
 }
